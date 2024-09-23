@@ -1,0 +1,39 @@
+{
+  "name": "language_flashcards_api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/yuri-duque/language_flashcards_api.git",
+  "author": "Yuri Duque <P0658161@portoseguro.com.br>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon src/server.ts",
+    "start": "ts-node src/server.ts",
+    "build": "yarn swagger && tsc --outDir public",
+    "deploy": "node public/src/server.js",
+    "swagger": "node swagger",
+    "swagger:commit": "git add ./swagger/swagger_output.json",
+    "lint": "eslint src/**/*.ts",
+    "lint:fix": "eslint src/**/*.ts --fix"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "nodemon": "^3.1.7",
+    "openai": "^4.63.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@typescript-eslint/eslint-plugin": "^8.7.0",
+    "@typescript-eslint/parser": "^8.7.0",
+    "eslint": "^9.11.1",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "prettier": "^3.3.3",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.2",
+    "typescript-eslint": "^8.7.0"
+  }
+}
