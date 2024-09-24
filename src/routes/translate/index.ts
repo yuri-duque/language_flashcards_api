@@ -1,13 +1,13 @@
 import { Request, Response, Router } from 'express';
-import { TranslateService } from '../../service/translateService';
+import { TranslateService } from '../../service';
 
 const router = Router();
 
-router.get('/api/translate', async (req: Request, res: Response) => {
-  const text = req.params.text;
+router.get('/translate', async (req: Request, res: Response) => {
+  const text = req.query.text as string;
 
   const translateService = new TranslateService();
-  const translatedText = await translateService.translateText(text);
+  const translatedText = await translateService.translate(text);
 
   const response = {
     text,

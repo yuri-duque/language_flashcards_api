@@ -1,15 +1,16 @@
-import express from "express";
-import dotenv from "dotenv";
-import bodyParser from "body-parser";
-import cors from "cors";
+import express from 'express';
+import dotenv from 'dotenv';
+import bodyParser from 'body-parser';
+import cors from 'cors';
 
-import customResponse from "./middlewares/customErrorMiddleware";
-import TranslateRouter from "./routes/translate";
+import customResponse from './middlewares/customErrorMiddleware';
+import TranslateRouter from './routes/translate';
+import ExempleRouter from './routes/exemples';
 
 dotenv.config();
 
 const PORT = process.env.PORT || 4000;
-const HOSTNAME = "http://localhost";
+const HOSTNAME = 'http://localhost';
 
 const app = express();
 
@@ -19,6 +20,7 @@ app.use(cors({ origin: [`${HOSTNAME}:${PORT}`] }));
 
 app.use(customResponse);
 
-app.use("/api", TranslateRouter);
+app.use('/api', TranslateRouter);
+app.use('/api', ExempleRouter);
 
-app.listen(PORT, () => 'server running on port 3333')
+app.listen(PORT, () => `server running ${HOSTNAME}:${PORT}`);
