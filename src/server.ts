@@ -4,8 +4,7 @@ import bodyParser from 'body-parser';
 import cors from 'cors';
 
 import customResponse from './middlewares/customErrorMiddleware';
-import TranslateRouter from './routes/translate';
-import ExempleRouter from './routes/exemples';
+import languageRouter from './routes/languageRouter';
 
 dotenv.config();
 
@@ -20,7 +19,6 @@ app.use(cors({ origin: [`${HOSTNAME}:${PORT}`] }));
 
 app.use(customResponse);
 
-app.use('/api', TranslateRouter);
-app.use('/api', ExempleRouter);
+app.use('/api', languageRouter);
 
 app.listen(PORT, () => `server running ${HOSTNAME}:${PORT}`);

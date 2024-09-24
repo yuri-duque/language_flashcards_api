@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import * as express from "express";
-import CustomError from "../../src/utils/customError";
+import * as express from 'express';
+import CustomError from '../../src/utils/customError';
+import type { Request } from 'express';
 
 type ResponseType = {
   message?: string;
@@ -48,3 +49,9 @@ declare global {
     }
   }
 }
+
+type EmptyObject = Record<string, never>;
+
+export type RequestWithBody<T> = Request<EmptyObject, EmptyObject, T, EmptyObject>;
+
+export type RequestWithQuery<T> = Request<EmptyObject, EmptyObject, EmptyObject, T>;

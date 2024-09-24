@@ -1,3 +1,2 @@
-export * from './generateExemplesService';
+export * from './languageService';
 export * from './IAService';
-export * from './translateService';
