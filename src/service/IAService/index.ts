@@ -5,11 +5,23 @@ export class IAService {
   readonly openai;
 
   constructor() {
-    this.openai = new OpenAI({
-      apiKey: process.env.OPENAI_API_KEY,
-      organization: process.env.OPENAI_ORGANIZATION_ID,
-      project: process.env.OPENAI_PROJECT_ID,
-    });
+    const apiKey = process.env.OPENAI_API_KEY;
+    const organization = process.env.OPENAI_ORGANIZATION_ID;
+    const project = process.env.OPENAI_PROJECT_ID;
+
+    if (!apiKey) {
+      throw new Error('OPENAI_API_KEY is not defined');
+    }
+
+    if (!organization) {
+      throw new Error('OPENAI_ORGANIZATION_ID is not defined');
+    }
+
+    if (!project) {
+      throw new Error('OPENAI_PROJECT_ID is not defined');
+    }
+
+    this.openai = new OpenAI({ apiKey, organization, project });
   }
 
   async chat(messages: Array<ChatCompletionMessageParam>) {

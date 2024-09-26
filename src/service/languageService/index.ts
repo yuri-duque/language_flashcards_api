@@ -1,6 +1,11 @@
 import { stringInject } from '../../utils/stringInject';
 import { IAService } from '../IAService';
-import { GenerateExemplesParams, GenerateExemplesResult, TranslateParams, TranslateResult } from './types';
+import {
+  GenerateExemplesParams,
+  GenerateExemplesResult,
+  TranslateParams,
+  TranslateResult,
+} from './types';
 
 export class LanguageService {
   private readonly IAService: IAService;
@@ -24,7 +29,11 @@ export class LanguageService {
     }
   }
 
-  async translate({ text, textLanguage = 'english', targetLanguage = 'portuguese' }: TranslateParams) {
+  async translate({
+    text,
+    textLanguage = 'english',
+    targetLanguage = 'portuguese',
+  }: TranslateParams) {
     if (!text) {
       throw new Error('text is required');
     }
@@ -57,7 +66,11 @@ export class LanguageService {
 
     try {
       const systemPronpt = stringInject(this.systemPronpt, { textLanguage });
-      const userPronpt = stringInject(this.exemplePronpt, { text, textLanguage, quantity: quantity.toString() });
+      const userPronpt = stringInject(this.exemplePronpt, {
+        text,
+        textLanguage,
+        quantity: quantity.toString(),
+      });
 
       const response = await this.IAService.chat([
         { role: 'system', content: systemPronpt },

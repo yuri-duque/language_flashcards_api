@@ -1,8 +1,17 @@
 {
   "compilerOptions": {
+    "types": [
+      "jest",
+      "node",
+    ],
+    "typeRoots": [
+      "./types",
+      "./node_modules/@types"
+    ],
     "target": "es6",
     "module": "commonjs",
     "esModuleInterop": true,
+    "skipLibCheck": true,
     "allowSyntheticDefaultImports": true,
     "noImplicitAny": false,
     "strict": true,
@@ -12,7 +21,13 @@
     "moduleResolution": "node",
     "sourceMap": true,
     "outDir": "public",
-    "typeRoots": ["@types"]
   },
-  "include": ["**/*.ts", "swagger/index.ts"]
+  "include": [
+    "**/*.ts",
+    "swagger/index.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/*.spec.ts"
+  ]
 }
