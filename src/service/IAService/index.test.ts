@@ -1,5 +1,5 @@
 import OpenAI from 'openai';
-import { IAService } from '../IAService';
+import { IAService } from './index';
 
 const mockChatCreate = jest.fn();
 jest.mock('openai', () => ({
