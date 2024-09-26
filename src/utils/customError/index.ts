@@ -1,4 +1,4 @@
-import { STATUS } from '../middlewares/customErrorMiddleware';
+import { STATUS } from '../../middlewares/customErrorMiddleware';
 
 class CustomError extends Error {
   statusCode: STATUS;
