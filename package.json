@@ -17,10 +17,13 @@
     "test": "jest --coverage"
   },
   "dependencies": {
+    "@types/firebase": "^3.2.1",
     "body-parser": "^1.20.3",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.21.0",
+    "firebase": "^10.13.2",
+    "firebase-admin": "^12.5.0",
     "nodemon": "^3.1.7",
     "openai": "^4.63.0",
     "yup": "^1.4.0"

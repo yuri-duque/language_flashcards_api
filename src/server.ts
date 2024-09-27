@@ -4,21 +4,30 @@ import bodyParser from 'body-parser';
 import cors from 'cors';
 
 import customResponse from './middlewares/customErrorMiddleware';
-import languageRouter from './routes/languageRouter';
+import { languageRouter, userRouter } from './routes';
+import { firebaseConfig } from './config/Firebase';
 
-dotenv.config();
+try {
+  dotenv.config();
 
-const PORT = process.env.PORT || 4000;
-const HOSTNAME = 'http://localhost';
+  const PORT = process.env.PORT || 4000;
+  const HOSTNAME = 'http://localhost';
 
-const app = express();
+  firebaseConfig();
 
-app.use(express.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(cors({ origin: [`${HOSTNAME}:${PORT}`] }));
+  const app = express();
 
-app.use(customResponse);
+  app.use(express.json());
+  app.use(bodyParser.urlencoded({ extended: true }));
+  app.use(cors({ origin: [`${HOSTNAME}:${PORT}`] }));
 
-app.use('/api', languageRouter);
+  app.use(customResponse);
 
-app.listen(PORT, () => `server running ${HOSTNAME}:${PORT}`);
+  app.use('/api', languageRouter);
+  app.use('/api', userRouter);
+
+  app.listen(PORT, () => `server running ${HOSTNAME}:${PORT}`);
+  console.log(`Server running on ${HOSTNAME}:${PORT}`);
+} catch (error) {
+  console.log('Error on server initialization', error);
+}
