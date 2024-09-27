@@ -5,9 +5,9 @@ import { RequestWithQuery } from '../../../@types/express';
 import { requestExempleSchema, requestTranslateSchema } from './validationSchemas';
 import { validationQueryParams } from '../../utils/validationRequest';
 
-const router = Router();
+const languageRouter = Router();
 
-router.get(
+languageRouter.get(
   '/language/exemples',
   async (req: RequestWithQuery<ExemplesQueryParams>, res: Response) => {
     try {
@@ -29,7 +29,7 @@ router.get(
   },
 );
 
-router.get(
+languageRouter.get(
   '/language/translate',
   async (req: RequestWithQuery<TranslateQueryParams>, res: Response) => {
     try {
@@ -51,4 +51,4 @@ router.get(
   },
 );
 
-export default router;
+export { languageRouter };
