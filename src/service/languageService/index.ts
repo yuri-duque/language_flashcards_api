@@ -1,5 +1,5 @@
+import { OpenAI } from '../../config/OpenIA';
 import { stringInject } from '../../utils/stringInject';
-import { IAService } from '../IAService';
 import {
   GenerateExemplesParams,
   GenerateExemplesResult,
@@ -8,13 +8,13 @@ import {
 } from './types';
 
 export class LanguageService {
-  private readonly IAService: IAService;
+  private readonly IAService: OpenAI;
   private systemPronpt = process.env.LANGUAGE_SYSTEM_PRONPT || '';
   private exemplePronpt = process.env.LANGUAGE_EXEMPLE_PRONPT || '';
   private translatePronpt = process.env.LANGUAGE_TRANSLATE_PRONPT || '';
 
   constructor() {
-    this.IAService = new IAService();
+    this.IAService = new OpenAI();
 
     if (!this.systemPronpt) {
       throw new Error('systemPronpt is not defined');

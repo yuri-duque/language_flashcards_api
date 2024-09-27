@@ -1,7 +1,9 @@
-import OpenAI from 'openai';
-import { ChatCompletionMessageParam } from 'openai/resources/chat/completions';
+import OpenAIBase from 'openai';
+import { ChatCompletionMessageParam } from 'openai/resources';
+import CustomError from '../../utils/customError';
+import { STATUS } from '../../middlewares/customErrorMiddleware';
 
-export class IAService {
+export class OpenAI {
   readonly openai;
 
   constructor() {
@@ -9,19 +11,11 @@ export class IAService {
     const organization = process.env.OPENAI_ORGANIZATION_ID;
     const project = process.env.OPENAI_PROJECT_ID;
 
-    if (!apiKey) {
-      throw new Error('OPENAI_API_KEY is not defined');
+    if (!apiKey || !organization || !project) {
+      throw new CustomError('ENVS is not defined', STATUS.error);
     }
 
-    if (!organization) {
-      throw new Error('OPENAI_ORGANIZATION_ID is not defined');
-    }
-
-    if (!project) {
-      throw new Error('OPENAI_PROJECT_ID is not defined');
-    }
-
-    this.openai = new OpenAI({ apiKey, organization, project });
+    this.openai = new OpenAIBase({ apiKey, organization, project });
   }
 
   async chat(messages: Array<ChatCompletionMessageParam>) {

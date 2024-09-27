@@ -1,5 +1,4 @@
-import OpenAI from 'openai';
-import { IAService } from './index';
+import { OpenAI } from './index';
 
 const mockChatCreate = jest.fn();
 jest.mock('openai', () => ({
@@ -21,23 +20,23 @@ describe('IAService', () => {
     process.env.OPENAI_ORGANIZATION_ID = 'test-organization-id';
     process.env.OPENAI_PROJECT_ID = 'test-project-id';
 
-    iaService = new IAService();
+    iaService = new OpenAI();
     mockChatCreate.mockClear();
   });
 
   it('should throw an error if OPENAI_API_KEY is not defined', () => {
     delete process.env.OPENAI_API_KEY;
-    expect(() => new IAService()).toThrow('OPENAI_API_KEY is not defined');
+    expect(() => new OpenAI()).toThrow('OPENAI_API_KEY is not defined');
   });
 
   it('should throw an error if OPENAI_ORGANIZATION_ID is not defined', () => {
     delete process.env.OPENAI_ORGANIZATION_ID;
-    expect(() => new IAService()).toThrow('OPENAI_ORGANIZATION_ID is not defined');
+    expect(() => new OpenAI()).toThrow('OPENAI_ORGANIZATION_ID is not defined');
   });
 
   it('should throw an error if OPENAI_PROJECT_ID is not defined', () => {
     delete process.env.OPENAI_PROJECT_ID;
-    expect(() => new IAService()).toThrow('OPENAI_PROJECT_ID is not defined');
+    expect(() => new OpenAI()).toThrow('OPENAI_PROJECT_ID is not defined');
   });
 
   describe('chat', () => {
