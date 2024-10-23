@@ -13,7 +13,7 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "allowSyntheticDefaultImports": true,
-    "noImplicitAny": false,
+    "noImplicitAny": true,
     "strict": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
@@ -26,8 +26,8 @@
       "@config/*": [
         "config/*"
       ],
-      "@integrations/*": [
-        "integrations/*"
+      "@repositories/*": [
+        "repositories/*"
       ],
       "@middlewares/*": [
         "middlewares/*"

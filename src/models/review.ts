@@ -1,10 +1,7 @@
 import { BaseModel } from '@config/model/baseModel';
 
 export interface Review extends BaseModel {
-  cardId: string;
-  easeFactor: number;
-  interval: number;
-  nextReview: Date;
+  rating: number;
   reviewDate: Date;
-  repetitions: number;
+  expectedReviewDate: Date;
 }

@@ -1,4 +1,4 @@
-import CustomError, { STATUS } from '@/utils/customError';
+import CustomError, { STATUS } from '@utils/customError';
 import OpenAIBase from 'openai';
 import { ChatCompletionMessageParam } from 'openai/resources';
 
