@@ -15,6 +15,10 @@ type ResponseErrorType = {
 
 declare global {
   namespace Express {
+    interface Request {
+      userId?: string; // Adiciona o userId à interface Request
+    }
+
     interface Response {
       /**
        * return response with status 200
@@ -51,6 +55,6 @@ declare global {
 
 type EmptyObject = Record<string, never>;
 
-export type RequestWithBody<T> = Request<EmptyObject, EmptyObject, T, EmptyObject>;
+export type RequestWithBody<T> = Request<any, unknown, T, unknown>;
 
-export type RequestWithQuery<T> = Request<EmptyObject, EmptyObject, EmptyObject, T>;
+export type RequestWithQuery<T> = Request<any, any, any, T>;
