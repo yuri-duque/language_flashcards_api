@@ -1,9 +1,9 @@
+import { AuthService } from '@services/authService';
+import { validationQueryParams } from '@utils/validationRequest';
 import { Response, Router } from 'express';
 import { RequestWithQuery } from '../../../@types/express';
 import { RefreshTokenQueryParams } from './types';
-import { validationQueryParams } from '@utils/validationRequest';
 import { requestRefreshTokenSchema } from './validationSchema';
-import { AuthService } from '@services/authService';
 
 const authRouter = Router();
 

@@ -1,6 +1,6 @@
-import { initializeApp } from 'firebase/app';
 import firebaseAdmin from 'firebase-admin';
 import { ServiceAccount } from 'firebase-admin/app';
+import { initializeApp } from 'firebase/app';
 import serviceAccount from '../../../service_account.json';
 
 export const firebaseConfig = () => {

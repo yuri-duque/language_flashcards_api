@@ -1,9 +1,9 @@
 import { Response, Router } from 'express';
-import { LanguageService } from '../../services';
-import { ExemplesQueryParams, TranslateQueryParams } from './types';
 import { RequestWithQuery } from '../../../@types/express';
-import { requestExempleSchema, requestTranslateSchema } from './validationSchemas';
+import { LanguageService } from '../../services';
 import { validationQueryParams } from '../../utils/validationRequest';
+import { ExemplesQueryParams, TranslateQueryParams } from './types';
+import { requestExempleSchema, requestTranslateSchema } from './validationSchemas';
 
 const languageRouter = Router();
 

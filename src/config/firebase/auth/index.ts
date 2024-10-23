@@ -1,6 +1,6 @@
+import { auth } from 'firebase-admin';
 import { STATUS } from '../../../middlewares/customErrorMiddleware';
 import CustomError from '../../../utils/customError';
-import { auth } from 'firebase-admin';
 
 export class FirebaseAuth {
   async verifyToken(token: string) {

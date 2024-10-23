@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import * as express from 'express';
-import type { Request } from 'express';
 import CustomError from '@utils/customError';
+import type { Request } from 'express';
 
 type ResponseType = {
   message?: string;

@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { NextFunction, Request, Response } from "express";
-import { ResponseErrorType, ResponseType } from "../../@types/express";
-import CustomError from "../utils/customError";
+import { NextFunction, Request, Response } from 'express';
+import { ResponseErrorType, ResponseType } from '../../@types/express';
+import CustomError from '../utils/customError';
 
 export enum STATUS {
   success = 200,
@@ -36,7 +36,7 @@ export default function responseMiddleware(
   response.error = ({ error, message, data }: ResponseErrorType) => {
     if (error instanceof CustomError) {
       const body = {
-        status: "error",
+        status: 'error',
         message: error.message || message,
         data,
       };
@@ -44,7 +44,7 @@ export default function responseMiddleware(
     }
 
     const body = {
-      status: "error",
+      status: 'error',
       message,
       error: error?.message,
       data,
