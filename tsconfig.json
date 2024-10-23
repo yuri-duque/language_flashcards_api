@@ -1,7 +1,13 @@
 {
   "compilerOptions": {
-    "types": ["jest", "node"],
-    "typeRoots": ["./types", "./node_modules/@types"],
+    "types": [
+      "jest",
+      "node"
+    ],
+    "typeRoots": [
+      "./types",
+      "./node_modules/@types"
+    ],
     "target": "es6",
     "module": "commonjs",
     "esModuleInterop": true,
@@ -17,15 +23,35 @@
     "outDir": "public",
     "baseUrl": "./src",
     "paths": {
-      "@config/*": ["config/*"],
-      "@integrations/*": ["integrations/*"],
-      "@middlewares/*": ["middlewares/*"],
-      "@models/*": ["models/*"],
-      "@routes/*": ["routes/*"],
-      "@services/*": ["services/*"],
-      "@utils/*": ["utils/*"]
+      "@config/*": [
+        "config/*"
+      ],
+      "@integrations/*": [
+        "integrations/*"
+      ],
+      "@middlewares/*": [
+        "middlewares/*"
+      ],
+      "@models/*": [
+        "models/*"
+      ],
+      "@routes/*": [
+        "routes/*"
+      ],
+      "@services/*": [
+        "services/*"
+      ],
+      "@utils/*": [
+        "utils/*"
+      ]
     }
   },
-  "include": ["**/*.ts", "swagger/index.ts"],
-  "exclude": ["node_modules", "**/*.spec.ts"]
+  "include": [
+    "**/*.ts",
+    "swagger/index.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/*.spec.ts"
+  ]
 }

@@ -1,4 +1,4 @@
-import { FirebaseUser } from '../../config/firebase/user';
+import { FirebaseUser } from '@config/firebase/user';
 
 export class UserService {
   private readonly firebaseUser: FirebaseUser;

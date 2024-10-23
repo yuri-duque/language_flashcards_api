@@ -1,7 +1,7 @@
+import { LanguageService } from '@services/languageService';
+import { validationQueryParams } from '@utils/validationRequest';
 import { Response, Router } from 'express';
 import { RequestWithQuery } from '../../../@types/express';
-import { LanguageService } from '../../services';
-import { validationQueryParams } from '../../utils/validationRequest';
 import { ExemplesQueryParams, TranslateQueryParams } from './types';
 import { requestExempleSchema, requestTranslateSchema } from './validationSchemas';
 

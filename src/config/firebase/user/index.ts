@@ -1,6 +1,5 @@
+import CustomError, { STATUS } from '@utils/customError';
 import { auth } from 'firebase-admin';
-import { STATUS } from '../../../middlewares/customErrorMiddleware';
-import CustomError from '../../../utils/customError';
 
 export class FirebaseUser {
   async createUser(name: string, email: string, password: string, phoneNumber?: string) {

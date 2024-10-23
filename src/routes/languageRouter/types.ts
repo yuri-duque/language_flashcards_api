@@ -1,4 +1,4 @@
-import { GenerateExemplesParams, TranslateParams } from '../../services/languageService/types';
+import { GenerateExemplesParams, TranslateParams } from '@services/languageService/types';
 
 export interface TranslateQueryParams extends TranslateParams {}
 

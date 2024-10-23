@@ -1,7 +1,8 @@
+import { expressConfig } from '@config/express';
+import { firebaseConfig } from '@config/firebase';
+import { languageRouter } from '@routes/languageRouter';
+import { userRouter } from '@routes/userRouter';
 import dotenv from 'dotenv';
-import { expressConfig } from './config/express';
-import { firebaseConfig } from './config/firebase';
-import { languageRouter, userRouter } from './routes';
 
 try {
   dotenv.config();

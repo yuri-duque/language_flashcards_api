@@ -1,5 +1,5 @@
+import CustomError from '@utils/customError';
 import { AnyObjectSchema } from 'yup';
-import CustomError from '../customError';
 
 export const validationQueryParams = async (params: any, validationSchema: AnyObjectSchema) => {
   try {

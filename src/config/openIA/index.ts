@@ -1,7 +1,6 @@
+import CustomError, { STATUS } from '@/utils/customError';
 import OpenAIBase from 'openai';
 import { ChatCompletionMessageParam } from 'openai/resources';
-import { STATUS } from '../../middlewares/customErrorMiddleware';
-import CustomError from '../../utils/customError';
 
 export class OpenAI {
   readonly openai;

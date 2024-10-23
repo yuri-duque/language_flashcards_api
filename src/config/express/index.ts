@@ -1,9 +1,8 @@
+import customResponse from '@middlewares/customErrorMiddleware';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import express from 'express';
-
-import customResponse from '../../middlewares/customErrorMiddleware';
 
 export const expressConfig = ({ port, hostname }: { port: number | string; hostname: string }) => {
   dotenv.config();

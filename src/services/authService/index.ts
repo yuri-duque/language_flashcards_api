@@ -1,4 +1,4 @@
-import { FirebaseAuth } from '../../config/firebase/auth';
+import { FirebaseAuth } from '@config/firebase/auth';
 
 export class AuthService {
   private readonly firebaseAuth: FirebaseAuth;

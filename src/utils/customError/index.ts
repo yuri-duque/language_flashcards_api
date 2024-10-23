@@ -1,4 +1,11 @@
-import { STATUS } from '../../middlewares/customErrorMiddleware';
+export enum STATUS {
+  success = 200,
+  created = 201,
+  error = 500,
+  badRequest = 400,
+  unauthorized = 401,
+  notFound = 404,
+}
 
 class CustomError extends Error {
   statusCode: STATUS;

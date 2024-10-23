@@ -1,16 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import CustomError, { STATUS } from '@utils/customError';
 import { NextFunction, Request, Response } from 'express';
 import { ResponseErrorType, ResponseType } from '../../@types/express';
-import CustomError from '../utils/customError';
-
-export enum STATUS {
-  success = 200,
-  created = 201,
-  error = 500,
-  badRequest = 400,
-  unauthorized = 401,
-  notFound = 404,
-}
 
 export default function responseMiddleware(
   request: Request,
