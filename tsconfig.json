@@ -21,6 +21,30 @@
     "moduleResolution": "node",
     "sourceMap": true,
     "outDir": "public",
+    "baseUrl": "./src",
+    "paths": {
+      "@config/*": [
+        "config/*"
+      ],
+      "@integrations/*": [
+        "integrations/*"
+      ],
+      "@middlewares/*": [
+        "middlewares/*"
+      ],
+      "@models/*": [
+        "models/*"
+      ],
+      "@routes/*": [
+        "routes/*"
+      ],
+      "@services/*": [
+        "services/*"
+      ],
+      "@utils/*": [
+        "utils/*"
+      ]
+    }
   },
   "include": [
     "**/*.ts",

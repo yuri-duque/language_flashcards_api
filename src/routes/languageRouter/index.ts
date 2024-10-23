@@ -1,5 +1,5 @@
 import { Response, Router } from 'express';
-import { LanguageService } from '../../service';
+import { LanguageService } from '../../services';
 import { ExemplesQueryParams, TranslateQueryParams } from './types';
 import { RequestWithQuery } from '../../../@types/express';
 import { requestExempleSchema, requestTranslateSchema } from './validationSchemas';
