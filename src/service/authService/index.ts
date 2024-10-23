@@ -1,4 +1,4 @@
-import { FirebaseAuth } from '../../config/Firebase/auth';
+import { FirebaseAuth } from '../../config/firebase/auth';
 
 export class AuthService {
   private readonly firebaseAuth: FirebaseAuth;
@@ -7,11 +7,7 @@ export class AuthService {
     this.firebaseAuth = new FirebaseAuth();
   }
 
-  async verifyToken(token: string) {
-    return this.firebaseAuth.verifyToken(token);
-  }
-
-  async createCustomToken(uid: string) {
-    return this.firebaseAuth.createCustomToken(uid);
+  async refreshToken(refreshToken: string) {
+    return this.firebaseAuth.refreshToken(refreshToken);
   }
 }

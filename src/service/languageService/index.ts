@@ -1,4 +1,4 @@
-import { OpenAI } from '../../config/OpenIA';
+import { OpenAI } from '../../config/openIA';
 import { stringInject } from '../../utils/stringInject';
 import {
   GenerateExemplesParams,
